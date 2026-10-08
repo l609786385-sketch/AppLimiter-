@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.ruff_cache/
+*.pyc
+build/
+dist/
+*.db
+*.db-wal
+*.db-shm
+*.log
+.windows-verification.json
+.windows-package-verification.json
