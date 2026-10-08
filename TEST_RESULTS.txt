@@ -1,0 +1,57 @@
+test_background_pauses_single_and_daily (test_engine.AccountingTests.test_background_pauses_single_and_daily) ... ok
+test_clock_jump_not_billed (test_engine.AccountingTests.test_clock_jump_not_billed) ... ok
+test_configured_helper_is_same_rule (test_engine.AccountingTests.test_configured_helper_is_same_rule) ... ok
+test_daily_limit_blocks_relaunch_even_in_background (test_engine.AccountingTests.test_daily_limit_blocks_relaunch_even_in_background) ... ok
+test_daily_warning_not_repeated_after_app_relaunch (test_engine.AccountingTests.test_daily_warning_not_repeated_after_app_relaunch) ... ok
+test_delete_disables_interception_keeps_records (test_engine.AccountingTests.test_delete_disables_interception_keeps_records) ... ok
+test_disk_reopen_and_reboot_preserves_daily (test_engine.AccountingTests.test_disk_reopen_and_reboot_preserves_daily) ... ok
+test_duplicate_exe_rolls_back_entire_rule_edit (test_engine.AccountingTests.test_duplicate_exe_rolls_back_entire_rule_edit) ... ok
+test_foreground_accumulates_once (test_engine.AccountingTests.test_foreground_accumulates_once) ... ok
+test_fractional_credit_caps_at_limit (test_engine.AccountingTests.test_fractional_credit_caps_at_limit) ... ok
+test_initial_sample_does_not_charge_unobserved_time (test_engine.AccountingTests.test_initial_sample_does_not_charge_unobserved_time) ... ok
+test_invalid_paths_and_empty_rules_rejected (test_engine.AccountingTests.test_invalid_paths_and_empty_rules_rejected) ... ok
+test_limit_change_keeps_counters (test_engine.AccountingTests.test_limit_change_keeps_counters) ... ok
+test_locked_or_no_foreground_does_not_count (test_engine.AccountingTests.test_locked_or_no_foreground_does_not_count) ... ok
+test_midnight_releases_daily_block (test_engine.AccountingTests.test_midnight_releases_daily_block) ... ok
+test_midnight_splits_usage_and_resets_only_daily (test_engine.AccountingTests.test_midnight_splits_usage_and_resets_only_daily) ... ok
+test_multiple_apps_have_independent_budgets (test_engine.AccountingTests.test_multiple_apps_have_independent_budgets) ... ok
+test_multiple_same_exe_processes_do_not_duplicate (test_engine.AccountingTests.test_multiple_same_exe_processes_do_not_duplicate) ... ok
+test_no_midnight_service_uptime_required (test_engine.AccountingTests.test_no_midnight_service_uptime_required) ... ok
+test_non_target_same_filename_is_ignored (test_engine.AccountingTests.test_non_target_same_filename_is_ignored) ... ok
+test_partial_scan_does_not_erase_single_session (test_engine.AccountingTests.test_partial_scan_does_not_erase_single_session) ... ok
+test_pause_disables_exhausted_interception (test_engine.AccountingTests.test_pause_disables_exhausted_interception) ... ok
+test_pause_resume_preserves_usage (test_engine.AccountingTests.test_pause_resume_preserves_usage) ... ok
+test_pid_reuse_never_credits_old_interval (test_engine.AccountingTests.test_pid_reuse_never_credits_old_interval) ... ok
+test_restart_after_daily_exhausted_immediately_blocks (test_engine.AccountingTests.test_restart_after_daily_exhausted_immediately_blocks) ... ok
+test_restart_engine_preserves_live_single_session (test_engine.AccountingTests.test_restart_engine_preserves_live_single_session) ... ok
+test_separate_connections_share_persisted_usage (test_engine.AccountingTests.test_separate_connections_share_persisted_usage) ... ok
+test_single_limit_returns_only_target_refs (test_engine.AccountingTests.test_single_limit_returns_only_target_refs) ... ok
+test_single_relaunch_keeps_daily_usage (test_engine.AccountingTests.test_single_relaunch_keeps_daily_usage) ... ok
+test_sleep_gap_is_not_usage (test_engine.AccountingTests.test_sleep_gap_is_not_usage) ... ok
+test_transaction_rollback_keeps_usage_and_session_atomic (test_engine.AccountingTests.test_transaction_rollback_keeps_usage_and_session_atomic) ... ok
+test_warnings_deduplicate_across_worker_restart (test_engine.AccountingTests.test_warnings_deduplicate_across_worker_restart) ... ok
+test_dashboard_and_records_show_persisted_usage (test_gui.GuiIntegrationTests.test_dashboard_and_records_show_persisted_usage) ... ok
+test_rule_editor_save_integrates_with_dashboard (test_gui.GuiIntegrationTests.test_rule_editor_save_integrates_with_dashboard) ... ok
+test_selected_rule_can_pause_from_dashboard (test_gui.GuiIntegrationTests.test_selected_rule_can_pause_from_dashboard) ... ok
+test_changed_image_is_never_terminated (test_safety.TerminationSafetyTests.test_changed_image_is_never_terminated) ... ok
+test_critical_process_is_never_terminated (test_safety.TerminationSafetyTests.test_critical_process_is_never_terminated) ... ok
+test_other_user_or_session_is_never_opened (test_safety.TerminationSafetyTests.test_other_user_or_session_is_never_opened) ... ok
+test_recycled_pid_is_never_terminated (test_safety.TerminationSafetyTests.test_recycled_pid_is_never_terminated) ... ok
+test_removed_path_is_never_opened (test_safety.TerminationSafetyTests.test_removed_path_is_never_opened) ... ok
+test_system_directory_and_self_are_rejected (test_safety.TerminationSafetyTests.test_system_directory_and_self_are_rejected) ... ok
+test_verified_image_uses_same_handle_for_termination (test_safety.TerminationSafetyTests.test_verified_image_uses_same_handle_for_termination) ... ok
+test_creation_identity_and_rule_path_prevent_wrong_kill (test_windows.WindowsNativeTests.test_creation_identity_and_rule_path_prevent_wrong_kill) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
+test_exact_snapshot_foreground_and_handle_termination (test_windows.WindowsNativeTests.test_exact_snapshot_foreground_and_handle_termination) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
+test_gui_window_starts_with_isolated_data (test_windows.WindowsNativeTests.test_gui_window_starts_with_isolated_data) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
+test_same_filename_in_other_directory_is_not_targeted (test_windows.WindowsNativeTests.test_same_filename_in_other_directory_is_not_targeted) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
+test_single_limit_closes_all_matching_instances_keeps_daily (test_windows.WindowsNativeTests.test_single_limit_closes_all_matching_instances_keeps_daily) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
+test_worker_daily_accounting_relaunch_and_worker_restart (test_windows.WindowsNativeTests.test_worker_daily_accounting_relaunch_and_worker_restart) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
+test_deleted_rule_cancels_pending_kill (test_worker.WorkerIntegrationTests.test_deleted_rule_cancels_pending_kill) ... ok
+test_pause_between_accounting_and_enforcement_cancels_kill (test_worker.WorkerIntegrationTests.test_pause_between_accounting_and_enforcement_cancels_kill) ... ok
+test_termination_failure_is_logged_and_does_not_refund_usage (test_worker.WorkerIntegrationTests.test_termination_failure_is_logged_and_does_not_refund_usage) ... ok
+test_usage_is_committed_before_termination (test_worker.WorkerIntegrationTests.test_usage_is_committed_before_termination) ... ok
+
+----------------------------------------------------------------------
+Ran 52 tests in 0.179s
+
+OK (skipped=6)
