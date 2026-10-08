@@ -1,3 +1,4 @@
+请在已解锁的本地 Windows 桌面运行。测试将打开并关闭专用临时窗口。
 test_background_pauses_single_and_daily (test_engine.AccountingTests.test_background_pauses_single_and_daily) ... ok
 test_clock_jump_not_billed (test_engine.AccountingTests.test_clock_jump_not_billed) ... ok
 test_configured_helper_is_same_rule (test_engine.AccountingTests.test_configured_helper_is_same_rule) ... ok
@@ -40,18 +41,21 @@ test_recycled_pid_is_never_terminated (test_safety.TerminationSafetyTests.test_r
 test_removed_path_is_never_opened (test_safety.TerminationSafetyTests.test_removed_path_is_never_opened) ... ok
 test_system_directory_and_self_are_rejected (test_safety.TerminationSafetyTests.test_system_directory_and_self_are_rejected) ... ok
 test_verified_image_uses_same_handle_for_termination (test_safety.TerminationSafetyTests.test_verified_image_uses_same_handle_for_termination) ... ok
-test_creation_identity_and_rule_path_prevent_wrong_kill (test_windows.WindowsNativeTests.test_creation_identity_and_rule_path_prevent_wrong_kill) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
-test_exact_snapshot_foreground_and_handle_termination (test_windows.WindowsNativeTests.test_exact_snapshot_foreground_and_handle_termination) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
-test_gui_window_starts_with_isolated_data (test_windows.WindowsNativeTests.test_gui_window_starts_with_isolated_data) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
-test_same_filename_in_other_directory_is_not_targeted (test_windows.WindowsNativeTests.test_same_filename_in_other_directory_is_not_targeted) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
-test_single_limit_closes_all_matching_instances_keeps_daily (test_windows.WindowsNativeTests.test_single_limit_closes_all_matching_instances_keeps_daily) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
-test_worker_daily_accounting_relaunch_and_worker_restart (test_windows.WindowsNativeTests.test_worker_daily_accounting_relaunch_and_worker_restart) ... skipped '需要 Windows 交互桌面及 APPLIMITER_WINDOWS_TESTS=1'
+test_actual_interpreter_and_venv_launchers_are_protected (test_windows.WindowsNativeTests.test_actual_interpreter_and_venv_launchers_are_protected) ... ok
+test_creation_identity_and_rule_path_prevent_wrong_kill (test_windows.WindowsNativeTests.test_creation_identity_and_rule_path_prevent_wrong_kill) ... ok
+test_exact_snapshot_foreground_and_handle_termination (test_windows.WindowsNativeTests.test_exact_snapshot_foreground_and_handle_termination) ... ok
+test_gui_window_starts_with_isolated_data (test_windows.WindowsNativeTests.test_gui_window_starts_with_isolated_data) ... ok
+test_running_app_selection_and_background_pause (test_windows.WindowsNativeTests.test_running_app_selection_and_background_pause) ... ok
+test_same_filename_in_other_directory_is_not_targeted (test_windows.WindowsNativeTests.test_same_filename_in_other_directory_is_not_targeted) ... ok
+test_single_limit_closes_all_matching_instances_keeps_daily (test_windows.WindowsNativeTests.test_single_limit_closes_all_matching_instances_keeps_daily) ... ok
+test_worker_daily_accounting_relaunch_and_worker_restart (test_windows.WindowsNativeTests.test_worker_daily_accounting_relaunch_and_worker_restart) ... ok
 test_deleted_rule_cancels_pending_kill (test_worker.WorkerIntegrationTests.test_deleted_rule_cancels_pending_kill) ... ok
 test_pause_between_accounting_and_enforcement_cancels_kill (test_worker.WorkerIntegrationTests.test_pause_between_accounting_and_enforcement_cancels_kill) ... ok
 test_termination_failure_is_logged_and_does_not_refund_usage (test_worker.WorkerIntegrationTests.test_termination_failure_is_logged_and_does_not_refund_usage) ... ok
 test_usage_is_committed_before_termination (test_worker.WorkerIntegrationTests.test_usage_is_committed_before_termination) ... ok
 
 ----------------------------------------------------------------------
-Ran 52 tests in 0.179s
+Ran 54 tests in 25.693s
 
-OK (skipped=6)
+OK
+验证通过：D:\codex project\AppLimiter-\.windows-verification.json

@@ -2,7 +2,9 @@
 
 面向 Windows 10/11 的本地桌面应用限时 MVP，使用 Python、PySide6、psutil、Windows API 和 SQLite。后台监测与主窗口是两个独立进程，所有规则和使用记录都保存在本机，不需要服务器、云数据库或付费 API。
 
-**交付状态：源码已实现；尚未在 Windows 实机验证，也没有附带已验证的 Windows EXE。** 当前测试环境是 Linux。跨平台核心、模拟的安全边界、Qt 数据联动和后台数据库集成测试通过，不代表 Windows 原生功能已经通过。具体结果见 `TEST_REPORT.md`。
+**交付状态：2026-10-08 已在本机 Windows 11 x64 完成原生验证并生成 Windows EXE。** 源码和打包验收分别运行 54 项测试，全部通过、零跳过；真实中文界面与独立后台已启动检查。Windows 10、真实登录自启动、锁屏/休眠、午夜及另一台无 Python 电脑仍需人工验证，具体范围见 `TEST_REPORT.md`。
+
+本机直接运行：打开 `D:\codex project\AppLimiter-\dist\AppLimiter\`，双击 `AppLimiter.exe`。无需安装 Python；请保留同目录的 `_internal` 文件夹。分发时使用 `dist\AppLimiter-Windows-x64.zip`，完整解压后再运行 EXE。
 
 ## 已实现的功能
 
@@ -18,7 +20,7 @@
 - 独立后台托盘、收起/最小化至托盘、托盘重新打开主窗口、登录自启动。
 - 单次和每日额度剩余 5 分钟、1 分钟时提醒，提醒事件也保存在日志中。
 
-以上 Windows 原生行为仍需要按下文在 Windows 验证。强制结束可能丢失目标应用未保存的数据，添加规则的窗口中也会提示。
+应用识别、前后台计时、持久化、单次/每日限时和再次启动拦截已使用专用测试程序在本机实测；其他系统场景的验证范围见下文及测试报告。强制结束可能丢失目标应用未保存的数据，添加规则的窗口中也会提示。
 
 ## Windows 运行
 
@@ -58,7 +60,7 @@ py -3.12 -m venv .venv
 
 不按文件名、不按目录通配、不任意结束子进程。不同路径的同名 EXE 不会被规则匹配。安装器/启动器与实际播放窗口若是不同 EXE，建议从实际播放窗口的运行列表添加，并按需要明确添加辅助 EXE。更换安装路径后需要编辑规则。
 
-软件不会结束 Windows 目录内的程序、AppLimiter 自身、源码运行时的同目录 Python/Pythonw、系统关键进程，以及不属于当前用户登录会话的进程。结束前会再次核对当前规则、EXE 路径与创建时间，Windows 核对与结束使用同一个进程句柄。
+软件不会结束 Windows 目录内的程序、AppLimiter 自身、源码运行时的虚拟环境及底层 Python/Pythonw、系统关键进程，以及不属于当前用户登录会话的进程。结束前会再次核对当前规则、EXE 路径与创建时间，Windows 核对与结束使用同一个进程句柄。
 
 ## 数据保存与边界
 
@@ -112,7 +114,7 @@ py -3.12 -m venv .venv
 
 ## 生成 Windows EXE
 
-仅在 Windows 上构建，PyInstaller 不能在 Linux 交叉生成 Windows EXE。本交付未运行以下 Windows 构建命令。
+仅在 Windows 上构建，PyInstaller 不能在 Linux 交叉生成 Windows EXE。本机已使用下面的打包脚本完成构建；依赖安装完成后可加 `-SkipInstall` 跳过重复安装。
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\build_windows.ps1
@@ -132,9 +134,9 @@ dist\AppLimiter-Windows-x64.zip          完整可分发目录
 
 采用 PyInstaller **onedir** 包：无需目标机器安装 Python，但必须保留整个 `AppLimiter` 文件夹，不能只复制 EXE。这是独立桌面软件的目录包，不是安装器。未做代码签名，首次下载运行可能出现 Windows SmartScreen 提示。
 
-## Windows 手工验收清单（尚未完成）
+## Windows 手工验收清单（系统场景仍需完成）
 
-自动化脚本覆盖核心原生路径，但不会验证 Windows 通知设置、真实登录、重启或用户安装的播放器。发布前应分别在 Windows 10/11 完成：
+本机 Windows 11 自动化脚本已覆盖核心原生路径，中文界面已完成截图检查，但没有验证 Windows 通知设置、真实登录、重启或用户安装的播放器。下表是完整人工验收清单，已通过的自动化范围以 `TEST_REPORT.md` 为准；发布前应分别在 Windows 10/11 完成：
 
 | 操作 | 预期 |
 | --- | --- |

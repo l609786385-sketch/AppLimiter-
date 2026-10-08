@@ -10,3 +10,4 @@ dist/
 *.log
 .windows-verification.json
 .windows-package-verification.json
+verification-artifacts/

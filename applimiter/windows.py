@@ -29,8 +29,14 @@ class WindowsAdapter:
         self.self_exe = canonical_path(sys.executable)
         self.protected_exes = {self.self_exe}
         if not getattr(sys, "frozen", False):
-            parent = ntpath.dirname(self.self_exe)
-            self.protected_exes.update({ntpath.join(parent, "python.exe"), ntpath.join(parent, "pythonw.exe")})
+            # Windows venv executables redirect to a base interpreter. psutil
+            # reports that real image, which may also be used by other apps.
+            interpreters = {self.self_exe, canonical_path(psutil.Process().exe()),
+                            canonical_path(getattr(sys, "_base_executable", sys.executable))}
+            self.protected_exes.update(interpreters)
+            for interpreter in interpreters:
+                parent = ntpath.dirname(interpreter)
+                self.protected_exes.update({ntpath.join(parent, "python.exe"), ntpath.join(parent, "pythonw.exe")})
 
     def _bind(self):
         k, u = self.k, self.u

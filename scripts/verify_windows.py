@@ -18,7 +18,8 @@ sys.path.insert(0, str(ROOT))
 def fingerprint() -> str:
     digest = hashlib.sha256()
     files = [p for p in ROOT.rglob("*") if p.is_file() and
-             not any(part in {".venv", "__pycache__", "build", "dist", ".git"} for part in p.relative_to(ROOT).parts)
+             not any(part in {".venv", "__pycache__", "build", "dist", ".git", "verification-artifacts"}
+                     for part in p.relative_to(ROOT).parts)
              and (p.suffix in {".py", ".cs", ".ps1", ".bat", ".spec"} or p.name.startswith("requirements"))]
     for path in sorted(files):
         digest.update(path.relative_to(ROOT).as_posix().encode())
